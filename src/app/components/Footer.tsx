@@ -3,6 +3,7 @@
 import React from "react";
 import { Facebook, Instagram, Twitter } from "lucide-react";
 import Image from "next/image";
+import Logo from "./Logo";
 
 const Footer: React.FC = () => {
   return (
@@ -10,9 +11,7 @@ const Footer: React.FC = () => {
       <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-8">
         {/* About section */}
         <div>
-          <h3 className="text-xl font-semibold text-white mb-4">
-            Hotel Devdaha
-          </h3>
+          <Logo />
           <p>
             Experience comfort and luxury at the heart of Kathmandu. Our mission
             is to make your stay memorable.
