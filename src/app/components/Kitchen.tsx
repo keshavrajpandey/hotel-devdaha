@@ -33,6 +33,8 @@ const Kitchen: React.FC = () => {
                   alt={`Food ${num}`}
                   width={100}
                   height={100}
+                  quality={100}
+                  unoptimized
                   className="w-full h-72 object-cover hover:scale-105 transition-transform duration-500"
                 />
               </div>

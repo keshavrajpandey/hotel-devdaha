@@ -8,8 +8,9 @@ const About: React.FC = () => {
         <Image
           src="/img/about/about.jpg"
           alt="About Hotel Devdaha"
-          className="rounded-lg shadow-lg"
+          className="rounded-lg shadow-lg w-full"
           width={100}
+          unoptimized
           height={100}
         />
         <div>

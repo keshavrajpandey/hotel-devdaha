@@ -76,8 +76,12 @@ const Navbar: React.FC = () => {
 
         {/* Mobile Hamburger */}
         <div className="md:hidden">
-          <Button variant="subtle" onClick={open} className="p-0 text-gray-200">
-            <Menu size={28} />
+          <Button
+            variant="subtle"
+            onClick={open}
+            className="p-0  text-gray-200"
+          >
+            <Menu size={28} className="text-green-600" />
           </Button>
         </div>
 
@@ -85,7 +89,7 @@ const Navbar: React.FC = () => {
         <Drawer
           opened={opened}
           onClose={close}
-          title={<Logo />}
+          title={<Logo isDrawer />}
           padding="md"
           size="xs"
           styles={{

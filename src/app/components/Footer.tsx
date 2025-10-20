@@ -2,6 +2,7 @@
 
 import React from "react";
 import { Facebook, Instagram, Twitter } from "lucide-react";
+import Image from "next/image";
 
 const Footer: React.FC = () => {
   return (
@@ -45,7 +46,13 @@ const Footer: React.FC = () => {
               className="hover:text-green-400 transition"
               target="_blank"
             >
-              <Facebook className="w-6 h-6" />
+              <Image
+                alt="facebook"
+                width={100}
+                height={100}
+                src="/img/footer/facebook.png"
+                className="w-10"
+              />
             </a>
             <a
               href="https://www.instagram.com/hotel_devdaha/"
@@ -53,14 +60,26 @@ const Footer: React.FC = () => {
               className="hover:text-green-400 transition"
               target="_blank"
             >
-              <Instagram className="w-6 h-6" />
+              <Image
+                alt="instagram"
+                width={100}
+                height={100}
+                src="/img/footer/instagram.png"
+                className="w-10"
+              />
             </a>
             <a
-              href="#"
+              href="https://www.tiktok.com/@hoteldevdaharestaurant"
               aria-label="Twitter"
               className="hover:text-green-400 transition"
             >
-              <Twitter className="w-6 h-6" />
+              <Image
+                alt="tik-tok"
+                width={100}
+                height={100}
+                src="/img/footer/tik-tok.png"
+                className="w-10"
+              />
             </a>
           </div>
         </div>

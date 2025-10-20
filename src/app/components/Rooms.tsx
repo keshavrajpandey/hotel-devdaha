@@ -37,6 +37,7 @@ const Rooms: React.FC = () => {
               height={100}
               src={room.img}
               alt={room.title}
+              unoptimized
               className="h-56 w-full object-cover"
             />
             <div className="p-6">
