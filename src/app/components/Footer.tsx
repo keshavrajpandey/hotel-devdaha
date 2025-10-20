@@ -48,9 +48,10 @@ const Footer: React.FC = () => {
               <Facebook className="w-6 h-6" />
             </a>
             <a
-              href="#"
+              href="https://www.instagram.com/hotel_devdaha/"
               aria-label="Instagram"
               className="hover:text-green-400 transition"
+              target="_blank"
             >
               <Instagram className="w-6 h-6" />
             </a>
