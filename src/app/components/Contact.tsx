@@ -38,7 +38,7 @@ const Contact: React.FC = () => {
         {/* Google Map Embed */}
         <div className="rounded-xl overflow-hidden shadow-md h-[400px]">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3532.5382191775902!2d85.30978637546711!3d27.70066387618641!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjfCsDQyJzAyLjQiTiA4NcKwMTgnNDQuNSJF!5e0!3m2!1sen!2snp!4v1760941857993!5m2!1sen!2snp"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14130.160924663938!2d85.3009027467694!3d27.70060172056056!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb19d1fc56e311%3A0x54172b7f6f2f83af!2sOYO%20370%20Hotel%20Devdaha%20%26%20Restaurant!5e0!3m2!1sen!2snp!4v1760943375961!5m2!1sen!2snp"
             width="100%"
             height="100%"
             allowFullScreen
