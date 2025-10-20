@@ -2,8 +2,10 @@
 
 import { PhoneCallIcon } from "lucide-react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 export default function AboutPage() {
+  const router = useRouter();
   return (
     <div className="min-h-screen bg-white text-gray-800">
       {/* Hero Section */}
@@ -75,7 +77,12 @@ export default function AboutPage() {
                     <li>Single Size</li>
                     <li>Room service</li>
                   </ul>
-                  <button className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-md">
+                  <button
+                    onClick={() => {
+                      router.push(`/#contact`);
+                    }}
+                    className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-md cursor-pointer"
+                  >
                     Book Now
                   </button>
                 </div>
