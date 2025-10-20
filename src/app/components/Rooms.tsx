@@ -1,10 +1,13 @@
+import Image from "next/image";
+
 const Rooms: React.FC = () => {
   return (
     <section id="rooms" className="py-20 bg-gray-50 text-center">
       <h4 className="text-green-600 font-semibold">Our Rooms</h4>
       <h2 className="text-3xl font-bold mb-4">Luxury Accommodation</h2>
       <p className="max-w-2xl mx-auto text-gray-600 mb-10">
-        Choose from our comfortable rooms designed for relaxation and convenience.
+        Choose from our comfortable rooms designed for relaxation and
+        convenience.
       </p>
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto px-6">
@@ -29,7 +32,9 @@ const Rooms: React.FC = () => {
             key={idx}
             className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition"
           >
-            <img
+            <Image
+              width={100}
+              height={100}
               src={room.img}
               alt={room.title}
               className="h-56 w-full object-cover"

@@ -9,6 +9,7 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@mantine/carousel": "^8.3.5",
     "@mantine/core": "^8.3.5",
     "@mantine/hooks": "^8.3.5",
     "@mantine/notifications": "^8.3.5",

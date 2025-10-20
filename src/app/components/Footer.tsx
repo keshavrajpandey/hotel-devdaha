@@ -40,9 +40,10 @@ const Footer: React.FC = () => {
           <h4 className="text-lg font-semibold text-white mb-3">Follow Us</h4>
           <div className="flex gap-5">
             <a
-              href="#"
+              href="https://www.facebook.com/p/HOTEL-Devdaha-100068146331545/"
               aria-label="Facebook"
               className="hover:text-green-400 transition"
+              target="_blank"
             >
               <Facebook className="w-6 h-6" />
             </a>

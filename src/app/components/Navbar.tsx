@@ -1,25 +1,52 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Drawer, Button, Group, Flex } from "@mantine/core";
+import { Drawer, Button, Flex } from "@mantine/core";
 import { Menu } from "lucide-react";
 import { useDisclosure } from "@mantine/hooks";
+import { usePathname, useRouter } from "next/navigation";
+import Logo from "./Logo";
 
 const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
   const [opened, { open, close }] = useDisclosure(false);
-  const [mounted, setMounted] = useState(false); // Fix hydration
+  const [mounted, setMounted] = useState(false);
 
-  const navItems = ["Home", "About", "Kitchen", "Rooms", "Contact"];
+  const pathname = usePathname();
+  const router = useRouter();
+
+  const navItems = [
+    { label: "Home", id: "home" },
+    { label: "About", id: "about" },
+    { label: "Kitchen", id: "kitchen" },
+    { label: "Rooms", id: "rooms" },
+    { label: "Contact", id: "contact" },
+  ];
 
   useEffect(() => {
-    setMounted(true); // mark client mounted
+    setMounted(true);
     const handleScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  if (!mounted) return null; // Prevent server/client mismatch
+  if (!mounted) return null;
+
+  // 👇 Function to handle navigation + smooth scroll
+  const handleNavClick = (id: string) => {
+    close(); // close drawer if open
+
+    if (pathname === "/") {
+      // Already on home page → smooth scroll
+      const section = document.getElementById(id);
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      // Not on home → redirect and then scroll
+      router.push(`/#${id}`);
+    }
+  };
 
   return (
     <header
@@ -29,24 +56,19 @@ const Navbar: React.FC = () => {
     >
       <div className="max-w-7xl mx-auto flex justify-between items-center p-4">
         {/* Logo */}
-        <a
-          href="#home"
-          className="text-2xl font-bold text-green-600 flex items-center gap-2"
-        >
-          Hotel <span className="text-gray-200">Devdaha</span>
-        </a>
+        <Logo />
 
         {/* Desktop Menu */}
         <nav className="hidden md:flex">
           <ul className="flex gap-6 text-sm font-semibold">
             {navItems.map((item) => (
-              <li key={item}>
-                <a
-                  href={`#${item.toLowerCase()}`}
-                  className="hover:text-green-600 transition"
+              <li key={item.id}>
+                <button
+                  onClick={() => handleNavClick(item.id)}
+                  className="hover:text-green-600 text-gray-200 transition"
                 >
-                  {item}
-                </a>
+                  {item.label}
+                </button>
               </li>
             ))}
           </ul>
@@ -54,40 +76,34 @@ const Navbar: React.FC = () => {
 
         {/* Mobile Hamburger */}
         <div className="md:hidden">
-          <Button
-            variant="subtle"
-            onClick={open}
-            className="p-0 text-gray-900"
-          >
+          <Button variant="subtle" onClick={open} className="p-0 text-gray-200">
             <Menu size={28} />
           </Button>
-
-          
         </div>
-        {/* Mobile Drawer */}
-          <Drawer
-            opened={opened}
-            onClose={close} // fix here
-            title="Menu"
-            padding="md"
-            size="xs"
-           
-    
-            
-          >
-            <Flex direction="column" h="100%" >
-              {navItems.map((item) => (
-                <a
-                  key={item}
-                  href={`#${item.toLowerCase()}`}
-                  className="text-gray-900 font-semibold hover:text-green-600 block"
-                  onClick={close} // close drawer on click
-                >
-                  {item}
-                </a>
-              ))}
-            </Flex>
-          </Drawer>
+
+        {/* Drawer for Mobile */}
+        <Drawer
+          opened={opened}
+          onClose={close}
+          title={<Logo />}
+          padding="md"
+          size="xs"
+          styles={{
+            content: { backgroundColor: "#f9f9f9" },
+          }}
+        >
+          <Flex direction="column" gap="md" h="100%">
+            {navItems.map((item) => (
+              <button
+                key={item.id}
+                onClick={() => handleNavClick(item.id)}
+                className="text-gray-900 font-semibold hover:text-green-600 rounded-md p-2 hover:bg-green-400/20 text-left"
+              >
+                {item.label}
+              </button>
+            ))}
+          </Flex>
+        </Drawer>
       </div>
     </header>
   );

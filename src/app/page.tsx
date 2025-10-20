@@ -10,14 +10,12 @@ import Features from "./components/Features";
 export default function Home() {
   return (
     <>
-      <Navbar />
       <Hero />
       <Features/>
       <About />
       <Kitchen />
       <Rooms />
       <Contact />
-      <Footer />
     </>
   );
 }
