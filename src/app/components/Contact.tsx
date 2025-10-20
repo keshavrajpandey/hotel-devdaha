@@ -16,11 +16,11 @@ const Contact: React.FC = () => {
             or visit us at our location. We’ll be happy to help you anytime.
           </p>
           <ul className="text-gray-700 space-y-2">
-            <li>📍 Devdaha-1, Rupandehi, Nepal</li>
+            <li>📍Sundhara, Kathmandu, Nepal</li>
             <li>
               📞{" "}
               <a href="tel:+9779800000000" className="hover:underline">
-                +977 9800000000
+                +977 9851062280
               </a>
             </li>
             <li>
@@ -29,7 +29,7 @@ const Contact: React.FC = () => {
                 href="mailto:info@hoteldevdaha.com"
                 className="hover:underline"
               >
-                info@hoteldevdaha.com
+                hoteldevdaha2280@gmail.com
               </a>
             </li>
           </ul>

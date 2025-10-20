@@ -13,7 +13,7 @@ const Footer: React.FC = () => {
             Hotel Devdaha
           </h3>
           <p>
-            Experience comfort and luxury at the heart of Devdaha. Our mission
+            Experience comfort and luxury at the heart of Kathmandu. Our mission
             is to make your stay memorable.
           </p>
         </div>
