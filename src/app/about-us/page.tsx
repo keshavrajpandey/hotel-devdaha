@@ -39,6 +39,30 @@ export default function AboutPage() {
             peace.
           </p>
         </section>
+        <section className="space-y-6">
+          <h4 className="text-green-600 font-semibold uppercase"></h4>
+          <p className="text-lg leading-relaxed text-gray-700">
+            Building upon this legacy, the enterprise has recently undertaken a
+            significant expansion, bringing its renowned service and atmosphere
+            to the capital by opening a new branch in{" "}
+            <strong>Kathmandu's Sundhara</strong>. This location places the
+            hotel right at the confluence of the city's vibrant history and
+            modern bustle, with Sundhara itself being famous for its historic
+            water spouts and its central position as a cultural and
+            transportation hub. The Kathmandu branch offers guests the
+            unparalleled convenience of being a short walk from the iconic,
+            newly reconstructed Dharahara —a powerful national symbol of
+            resilience and a towering piece of Nepali history. This central
+            location also provides easy access to other profound historic places
+            like the
+            <strong>
+              {" "}
+              UNESCO World Heritage Site of Kathmandu Durbar Square
+            </strong>
+            and the sprawling parade ground of Tundikhel, immersing visitors
+            directly into the heart of the city's ancient heritage.
+          </p>
+        </section>
       </main>
 
       {/* Rooms Section */}
